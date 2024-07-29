@@ -2,21 +2,17 @@ import java.util.*;
 
 public class Main {
         public int[] solution(int n, int[] arr) {
-            for (int i = 0; i < n - 1; i++){
-                int idx = i;
-                for (int j = i + 1; j < n; j++){
-                    if (arr[j] < arr[idx]){
-                        idx = j;
-                    }
+            for (int i = 1; i < n; i++){
+                int tmp = arr[i], j;
+                for (j = i - 1; j >= 0; j--){
+                    if (arr[j] > tmp) arr[j + 1] = arr[j];
+                    else break;
                 }
-                int tmp = arr[i];
-                arr[i] = arr[idx];
-                arr[idx] = tmp;
-
+                arr[j + 1] = tmp;
             }
 
             return arr;
-           }
+       }
 
 
         public static void main(String[] args) {
