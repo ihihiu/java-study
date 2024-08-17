@@ -1,7 +1,5 @@
 import java.util.*;
 class Solution {
-    //1. 최솟값이 고유한지 확인하기
-    //2. 최솟값이 유일한지 확인하기
     public int getMin(int[] arr){
         int min = Integer.MAX_VALUE;
         for (int x: arr){
